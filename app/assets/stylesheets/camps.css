@@ -1,0 +1,101 @@
+.wrapper {
+  display: flex;
+}
+/* サイドバー */
+.side-ber {
+  width: 250px;
+  background-color:#d0a116;
+}
+
+.side-bar-header {
+  background-color:#d0a116;
+  height: 100px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-name a {
+  font-size: 25px;
+  text-decoration: none;
+  color: black;
+}
+
+.user-items {
+  height: calc(100vh - 100px);
+  background-color: darkgoldenrod;
+  padding: 10px 20px 0px;
+}
+
+.item-btn {
+  width: 70%;
+  border: 2px solid;
+  margin: 0 auto;
+  text-align: center;
+  background-color:white;
+}
+
+.item {
+  margin-top: 3px;
+  font-size: 18px;
+}
+
+
+/* メインコンテンツ */
+.main-content {
+  background-color: darkolivegreen;
+  width: calc(100vw - 250px);
+}
+
+.main-header {
+  height: 100px;
+  padding: 0 40px;
+  background-color: olive;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.camp-btn {
+  border: 1px solid;
+  padding: 3px;
+  background-color: white;
+  text-align: center;
+}
+
+.user-info {
+  border: 1px solid;
+  text-align: center;
+  padding: 3px;
+  background-color:white ;
+}
+
+.post {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+
+.camps {
+  height: 100vh - 100px;
+  padding: 40px 40px 0;
+}
+
+.style-name {
+  text-decoration: none;
+  color: black;
+  font-size: 40px;
+}
+
+.user-name {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+
+.camp-name {
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
