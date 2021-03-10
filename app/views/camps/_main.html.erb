@@ -1,14 +1,26 @@
 <div class="main-header">
   <div class="main-header-left">
-    <div class="camp-btn">
-      <%= link_to "キャンプを記録する","#", class: "post" %>
-    </div>
+    <% if user_signed_in? %>
+      <div class="camp-btn">
+        <%= link_to "キャンプを記録する","#", class: "post" %>
+      </div>
+    <% else %>
+      <div class="camp-btn">
+        <%= link_to "ユーザー登録", new_user_registration_path, class: "post" %>
+      </div>
+    <% end %>
   </div>
   <div class="main-header-right">
     <div class="user-info">
-      <div class="user-info">
-        <%= link_to "ログアウト", new_user_registration_path, class: "post" %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="user-info">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "post" %>
+        </div>
+      <% else %>
+        <div class="user-info">
+          <%= link_to "ログイン",user_session_path, class: "post" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
