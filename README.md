@@ -1,24 +1,56 @@
-# README
+# テーブルの設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column   | Type   | Options     |
+| -------- | ------ | ----------- |
+| nickname | string | null: false |
+| email    | string | null: false |
+| password | string | null: false |
 
-* Ruby version
+### Association
 
-* System dependencies
+- has_many :camps
+- has_many :items
 
-* Configuration
+## camps テーブル
 
-* Database creation
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| user         | references | null: false, foreign_key: true |
+| title        | string     | null: false                    |
+| style_id     | integer    | null: false                    |
+| participant  | integer    | null: false                    |
+| season_id    | integer    | null: false                    |
 
-* Database initialization
+### Associations
 
-* How to run the test suite
+- belongs_to :user
+- has_many :items, through: camp_items
 
-* Services (job queues, cache servers, search engines, etc.)
+## items テーブル
 
-* Deployment instructions
+| Column   | Type       | Options                        |
+| -------- | ---------- | ------------------------------ |
+| user     | references | null: false, foreign_key: true |
+| genre_id | integer    | null: false                    |
+| name     | string     | null: false                    |
+| type     | string     | null: false                    |
+| price    | integer    | null: false                    |
 
-* ...
+### Associations
+
+- belongs_to :user
+- has_many :camps, through: camp_items
+
+## camp_items テーブル
+
+| Column | Type       | Options                        |
+| ------ | ---------- | ------------------------------ |
+| camp   | references | null: false, foreign_key: true |
+| item   | references | null: false, foreign_key: true |
+
+### Associations
+
+- belongs_to :camp
+- belongs_to :item
