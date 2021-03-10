@@ -1,0 +1,27 @@
+.sign-up {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: darkgreen;
+}
+
+.left-sign-up {
+  margin-right: 20px;
+  font-size: 30px;
+}
+
+.field {
+  margin: 10px 0;
+}
+
+.text-field {
+  width: 100%;
+  font-size: 25px;
+}
+
+.submit {
+  margin: 0 auto;
+  font-size: 25px;
+}
