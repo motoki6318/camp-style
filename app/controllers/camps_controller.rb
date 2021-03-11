@@ -4,16 +4,23 @@ class CampsController < ApplicationController
   end
 
   def new
-    @camp = Camp.new
+    @camp = CampTags.new
   end
 
   def create
-    @camp = Camp.new
-    if @camp.save
-      redirect_to root_path
+    @camp = CampTags.new(camp_params)
+    if @camp.valid?
+      @camp.save
+      return redirect_to root_path
     else
       render :new
     end
   end
-  
+
+  private
+
+  def camp_params
+    params.require(:camp_tags).permit(:title, :style).merge(user_id: current_user.id)
+  end
+
 end

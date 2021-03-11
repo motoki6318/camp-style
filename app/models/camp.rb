@@ -1,7 +1,7 @@
 class Camp < ApplicationRecord
   belongs_to :user
   has_many :camp_tag_relations
-  has_many :tags
+  has_many :tags, through: :camp_tag_relations
   
   validates :title, presence: true
 

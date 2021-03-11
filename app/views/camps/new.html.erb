@@ -2,4 +2,21 @@
   <div class="side-ber">
     <%= render "side_ber" %>
   </div>
+  <%= form_with model: @camp, url: camps_path, class:'form-wrap', local: true do |f| %>
+    <div class='message-form'>
+      <div class="message-field">
+        <%= f.label :title,  "キャンプタイトル" %>
+        <%= f.text_area :title, class:"input-message" %>
+      </div>
+      <div class="tag-field", id='tag-field'>
+        <%= f.label :style, "キャンプスタイル" %>
+        <%= f.text_field :style, class:"input-tag" %>
+      </div>
+      <div id="search-result">
+      </div>
+    </div>
+    <div class="submit-post">
+      <%= f.submit "Send", class: "submit-btn" %>
+    </div>
+  <% end %>
 </div>
