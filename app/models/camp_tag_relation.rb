@@ -1,0 +1,2 @@
+class CampTagRelation < ApplicationRecord
+end
