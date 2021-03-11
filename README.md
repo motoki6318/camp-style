@@ -19,14 +19,35 @@
 | ------------ | ---------- | ------------------------------ |
 | user         | references | null: false, foreign_key: true |
 | title        | string     | null: false                    |
-| style_id     | integer    | null: false                    |
-| participant  | integer    | null: false                    |
-| season_id    | integer    | null: false                    |
 
 ### Associations
 
 - belongs_to :user
-- has_many :items, through: camp_items
+- nas_many :tags, through: camp_tag_relations
+- has_many :items, through: camp_item_relations
+
+## tags テーブル
+
+| Column | Type   | Options                        |
+| ------ | ------ | ------------------------------ |
+| style  | string | null: false, uniqueness: true  |
+
+### Associations
+
+- has_many :camps, through: :camp_tag_relations
+- has_many :camp_tag_relations
+
+## camp_tag_relations テーブル
+
+| Column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| camp         | references | null: false, foreign_key: true |
+| tag          | references | null: false, foreign_key: true |
+
+### Associations
+
+- belongs_to :camp
+- belongs_to :tag
 
 ## items テーブル
 
@@ -41,9 +62,9 @@
 ### Associations
 
 - belongs_to :user
-- has_many :camps, through: camp_items
+- has_many :camps, through: camp_item_relations
 
-## camp_items テーブル
+## camp_item_relations テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
