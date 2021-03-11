@@ -1,12 +1,12 @@
 
-<div class="sign-up">
-    <div class="left-sign-up">
+<div class="info">
+    <div class="left-info">
       <h2>Sign up</h2>
     </div>
-    <div class="right-sign-up">
+    <div class="right-info">
       <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
 
-        <%# <%= render 'shared/error_messages', model: f.object %>
+        <%= render 'layouts/error_messages', model: f.object %>
 
         <div class="field">
           <%= f.label :nickname %><br />
@@ -20,9 +20,6 @@
 
         <div class="field">
           <%= f.label :password %>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
           <%= f.password_field :password, class:"text-field" %>
         </div>
 
