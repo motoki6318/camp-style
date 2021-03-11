@@ -1,5 +1,6 @@
 class CampsController < ApplicationController
   def index
+    @tags = Tag.all.includes(:camp)
     @camps = Camp.all.includes(:user)
   end
 

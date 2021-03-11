@@ -1,0 +1,43 @@
+.form-wrap {
+  width: calc(100vw - 250px);
+  height: 100vh;
+  background-color: darkolivegreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: scroll;
+}
+
+.title-form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.input-title {
+  resize: none;
+}
+
+.tag-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.input-message {
+  font-size: 20px;
+}
+
+.submit-btn {
+  padding: 10px;
+  font-size: 20px;
+}
