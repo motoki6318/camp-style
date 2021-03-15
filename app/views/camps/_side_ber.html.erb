@@ -1,6 +1,10 @@
 <div class="side-bar-header">
   <div class="app-name">
-    <a href="#">CAMP-STYLE</a>
+    <% if user_signed_in? %>
+      <%= link_to "#{current_user.nickname}", "#", class: "post" %>
+    <% else %>
+      <a href="#">CAMP-STYLE</a>
+    <% end %>
   </div>
 </div>
 

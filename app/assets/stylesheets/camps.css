@@ -1,5 +1,7 @@
 .wrapper {
   display: flex;
+  height: 100vh;
+  width: 100vw;
 }
 /* サイドバー */
 .side-ber {
@@ -17,7 +19,7 @@
 }
 
 .app-name a {
-  font-size: 25px;
+  font-size: 20px;
   text-decoration: none;
   color: black;
 }
@@ -26,6 +28,7 @@
   height: calc(100vh - 100px);
   background-color: darkgoldenrod;
   padding: 10px 20px 0px;
+  overflow: scroll;
 }
 
 .item-btn {
@@ -46,6 +49,7 @@
 .main-content {
   background-color: darkolivegreen;
   width: calc(100vw - 250px);
+  height: 100vh;
 }
 
 .main-header {
@@ -78,14 +82,10 @@
 }
 
 .camps {
-  height: 100vh - 100px;
-  padding: 40px 40px 0;
-}
-
-.style-name {
-  text-decoration: none;
-  color: black;
-  font-size: 40px;
+  background-color: darkolivegreen;
+  height: calc(100vh - 100px);
+  padding: 40px 40px;
+  overflow:scroll;
 }
 
 .user-name {
@@ -94,8 +94,4 @@
   font-size: 20px;
 }
 
-.camp-name {
-  text-decoration: none;
-  color: black;
-  font-size: 20px;
-}
+/* new画面 */

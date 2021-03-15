@@ -2,7 +2,7 @@
   <div class="main-header-left">
     <% if user_signed_in? %>
       <div class="camp-btn">
-        <%= link_to "キャンプを記録する","#", class: "post" %>
+        <%= link_to "キャンプを記録する", new_camp_path, class: "post" %>
       </div>
     <% else %>
       <div class="camp-btn">
@@ -18,7 +18,7 @@
         </div>
       <% else %>
         <div class="user-info">
-          <%= link_to "ログイン",user_session_path, class: "post" %>
+          <%= link_to "ログイン", user_session_path, class: "post" %>
         </div>
       <% end %>
     </div>
@@ -26,10 +26,22 @@
 </div>
 
 <div class="camps">
-  <ul><%= link_to "ソロ","#", class: "style-name" %>
-    <li class="style-content">
-      <%= link_to "ユーザー名","#", class: "user-name" %>:<%= link_to "キャンプのタイトル","#", class: "camp-name" %>
-    </li>
-  </ul>
-
+  <div class="camps-wrap">
+    <% @tags.each do |tag|%>
+      <div class="camp_style">
+        <h1 class="style">
+          <%= tag.style %>
+        </h1>
+        <ul class="camp_title">
+          <p class="camps_list">
+            <% tag.camps.each do |camp| %>
+              <li class="title">
+                <%= link_to "#{camp.user.nickname}", "#" %> : <%= link_to "#{camp.title}", "#" %>
+              </li>
+            <%end%>
+          </p>
+        </ul>
+      </div>
+    <%end%>
+  </div>
 </div>
