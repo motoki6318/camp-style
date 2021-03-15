@@ -1,8 +1,8 @@
 class CampsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_item, only: [:index, :new, :show]
   def index
     @tags = Tag.all
-    @items = Item.all
   end
 
   def new
@@ -24,6 +24,10 @@ class CampsController < ApplicationController
 
   def camp_params
     params.require(:camp_tags).permit(:title, :style).merge(user_id: current_user.id)
+  end
+
+  def set_item
+    @items = Item.all
   end
 
 end
