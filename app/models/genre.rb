@@ -19,7 +19,15 @@ class Genre < ActiveHash::Base
     {id: 17, name: '食器'},
     {id: 18, name: 'バーナー'},
     {id: 19, name: 'ストーブ'},
-    {id: 20, name: 'その他'}
+    {id: 20, name: '斧'},
+    {id: 21, name: '薪ストーブ'},
+    {id: 22, name: 'ハンモック'},
+    {id: 23, name: 'リュック'},
+    {id: 24, name: 'ノコギリ'},
+    {id: 25, name: '収納'},
+    {id: 26, name: 'スコップ'},
+    {id: 27, name: 'ファイヤスターター'},
+    {id: 28, name: 'その他'}
   ]
 
   include ActiveHash::Associations
