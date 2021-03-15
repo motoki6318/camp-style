@@ -11,10 +11,11 @@ class CampsController < ApplicationController
   def create
     @camp = CampTags.new(camp_params)
     if @camp.valid?
-      @camp.save
+      @tag_list = camp_params[:style].split(/[[:blank:]]+/).select(&:present?)
+      @camp.save(@tag_list)
       return redirect_to root_path
     else
-      render :new
+      render "new"
     end
   end
 

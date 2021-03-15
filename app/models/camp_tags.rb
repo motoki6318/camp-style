@@ -8,9 +8,17 @@ class CampTags
     validates :style
   end
 
-  def save
-    camp = Camp.create(user_id: user_id, title: title)
-    tag = Tag.create(style: style)
-    CampTagRelation.create(camp_id: camp.id, tag_id: tag.id)
+  def save(tag_list)
+    @camp = Camp.create(user_id: user_id, title: title)
+    tag_list.each do |tag|
+      unless Tag.find_by(style: tag)
+        @tag = Tag.create(style: tag)
+        CampTagRelation.create(camp_id: @camp.id, tag_id: @tag.id)
+      else
+        @tag_id = Tag.find_by(style: tag)
+        CampTagRelation.create(camp_id: @camp.id, tag_id: @tag_id.id)
+      end
+    end
   end
+
 end
