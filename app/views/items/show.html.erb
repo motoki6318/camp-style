@@ -1,0 +1,47 @@
+<div class="wrapper">
+  <div class="side-ber">
+    <%= render "camps/side_ber" %>
+  </div>
+  <div class="item-datas">
+
+    <div class="item-data">
+      <div class="data-name">
+        アイテムの種類
+      </div>
+      <div class="data">
+        <%= @item.genre.name %>
+      </div>
+      <div class="item-info">
+        <%= link_to "#{current_user.nickname}の#{@item.genre.name}一覧", "#" %>
+      </div>
+    </div>
+
+    <div class="item-data">
+      <div class="data-name">
+        アイテムの名前
+      </div>
+      <div class="data">
+        <%= @item.name %>
+      </div>
+    </div>
+
+    <div class="item-data">
+      <div class="data-name">
+        アイテムの特徴や説明
+      </div>
+      <div class="data">
+        <%= @item.feature %>
+      </div>
+    </div>
+
+    <div class="item-data">
+      <div class="data-name">
+        アイテムの値段
+      </div>
+      <div class="data">
+        ¥<%= @item.price %>円
+      </div>
+    </div>
+  </div>
+
+</div>

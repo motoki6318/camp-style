@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_11_073902) do
+ActiveRecord::Schema.define(version: 2021_03_15_062936) do
 
   create_table "camp_tag_relations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "camp_id", null: false
@@ -27,6 +27,17 @@ ActiveRecord::Schema.define(version: 2021_03_11_073902) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_camps_on_user_id"
+  end
+
+  create_table "items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.integer "genre_id", null: false
+    t.string "name", null: false
+    t.string "feature", null: false
+    t.integer "price", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_items_on_user_id"
   end
 
   create_table "tags", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -51,4 +62,5 @@ ActiveRecord::Schema.define(version: 2021_03_11_073902) do
   add_foreign_key "camp_tag_relations", "camps"
   add_foreign_key "camp_tag_relations", "tags"
   add_foreign_key "camps", "users"
+  add_foreign_key "items", "users"
 end
