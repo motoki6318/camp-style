@@ -1,0 +1,2 @@
+class CampItemRelation < ApplicationRecord
+end
