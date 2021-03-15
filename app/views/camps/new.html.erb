@@ -3,7 +3,7 @@
     <%= render "side_ber" %>
   </div>
   <%= form_with model: @camp, url: camps_path, class:'form-wrap', local: true do |f| %>
-    <div class='title-form'>
+    <div class='form'>
       <div class="title-field">
         <%= f.label :title,  "キャンプタイトル" %>
         <%= f.text_area :title, class:"input-title" %>
