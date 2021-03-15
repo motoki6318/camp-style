@@ -1,7 +1,7 @@
 <div class="side-bar-header">
   <div class="app-name">
     <% if user_signed_in? %>
-      <%= link_to "#{current_user.nickname}", "#", class: "post" %>
+      <%= link_to "#{current_user.nickname}", root_path, class: "post" %>
     <% else %>
       <a href="#">CAMP-STYLE</a>
     <% end %>
@@ -14,13 +14,11 @@
   </div>
   <ul class="items">
     <div class="item">
-      <li>飯盒</li>
-    </div>
-    <div class="item">
-      <li>ランタン</li>
-    </div>
-    <div class="item">
-      <li>シュラフ</li>
+      <% @items.each do |item| %>
+        <li>
+          <%= item.name %>
+        </li>
+      <% end %>
     </div>
   </ul>
 </div>
