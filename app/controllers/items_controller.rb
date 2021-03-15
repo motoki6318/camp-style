@@ -26,7 +26,8 @@ class ItemsController < ApplicationController
   end
 
   def set_item
-    @items = Item.all
+    user = User.find(current_user.id)
+    @items = user.items
   end
 
 end

@@ -27,7 +27,10 @@ class CampsController < ApplicationController
   end
 
   def set_item
-    @items = Item.all
+    if user_signed_in?
+      user = User.find(current_user.id)
+      @items = user.items
+    end
   end
 
 end

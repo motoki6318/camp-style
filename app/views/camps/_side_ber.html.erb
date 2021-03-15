@@ -9,16 +9,18 @@
 </div>
 
 <div class="user-items">
-  <div class="item-btn">
-    <%= link_to "+マイアイテム", new_item_path, class: "post" %>
-  </div>
-  <ul class="items">
-    <div class="item">
-      <% @items.each do |item| %>
-        <li>
-          <%= link_to "#{item.name}", item_path(item.id) %>
-        </li>
-      <% end %>
+  <% if user_signed_in? %>
+    <div class="item-btn">
+      <%= link_to "+マイアイテム", new_item_path, class: "post" %>
     </div>
-  </ul>
+    <ul class="items">
+      <div class="item">
+        <% @items.each do |item| %>
+          <li>
+            <%= link_to "#{item.name}", item_path(item.id) %>
+          </li>
+        <% end %>
+      </div>
+    </ul>
+  <% end %>
 </div>
