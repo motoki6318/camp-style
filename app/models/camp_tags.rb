@@ -1,7 +1,7 @@
 class CampTags
 
   include ActiveModel::Model
-  attr_accessor :title, :style, :user_id
+  attr_accessor :title, :style, :user_id, :item_ids
 
   with_options presence: true do
     validates :title
