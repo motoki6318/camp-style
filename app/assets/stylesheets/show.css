@@ -1,0 +1,6 @@
+.camp-datas {
+  width: calc(100vw - 250px);
+  background-color: darkolivegreen;
+  overflow: scroll;
+  padding: 30px;
+}

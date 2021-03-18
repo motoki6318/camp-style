@@ -11,9 +11,11 @@
       <div class="data">
         <%= @item.genre.name %>
       </div>
-      <div class="item-info">
-        <%= link_to "#{current_user.nickname}の#{@item.genre.name}一覧", "#" %>
-      </div>
+      <% if user_signed_in? && current_user.id == @item.user.id %>
+        <div class="item-info">
+          <%= link_to "#{current_user.nickname}の#{@item.genre.name}一覧", "#" %>
+        </div>
+      <% end %>
     </div>
 
     <div class="item-data">
@@ -40,6 +42,19 @@
       </div>
       <div class="data">
         ¥<%= @item.price %>円
+      </div>
+    </div>
+
+    <div class="item-data">
+      <div class="data-name">
+        アイテムの使用履歴
+      </div>
+      <div class="data">
+        <% @item.camps.each do |camp| %>
+          <div class="data">
+            <%= link_to "#{camp.title}", camp_path(camp.id) %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

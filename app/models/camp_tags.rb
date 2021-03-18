@@ -6,6 +6,7 @@ class CampTags
   with_options presence: true do
     validates :title
     validates :style
+    validates :item_ids
   end
 
   def save(tag_list)

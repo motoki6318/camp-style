@@ -3,7 +3,7 @@
     <% if user_signed_in? %>
       <%= link_to "#{current_user.nickname}", root_path, class: "post" %>
     <% else %>
-      <a href="#">CAMP-STYLE</a>
+      <%= link_to "CAMP-STYLE", root_path, class: "post" %>
     <% end %>
   </div>
 </div>
