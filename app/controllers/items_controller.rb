@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show]
   before_action :set_item, only: [:new, :show]
 
   def new
@@ -26,8 +26,10 @@ class ItemsController < ApplicationController
   end
 
   def set_item
-    user = User.find(current_user.id)
-    @items = user.items
+    if user_signed_in?
+      user = User.find(current_user.id)
+      @items = user.items
+    end
   end
 
 end

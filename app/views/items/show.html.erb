@@ -11,9 +11,11 @@
       <div class="data">
         <%= @item.genre.name %>
       </div>
-      <div class="item-info">
-        <%= link_to "#{current_user.nickname}の#{@item.genre.name}一覧", "#" %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="item-info">
+          <%= link_to "#{current_user.nickname}の#{@item.genre.name}一覧", "#" %>
+        </div>
+      <% end %>
     </div>
 
     <div class="item-data">

@@ -5,6 +5,7 @@
   <div class="camp-datas">
     <div class="camp-data">
       <h1><%= @camp.title %></h1>
+      投稿者 : <%= @camp.user.nickname %>
     </div>
     <div class="camp-data">
       <h3>キャンプスタイル</h3>
@@ -14,9 +15,11 @@
     </div>
     <div class="camp-data">
       <h3>キャンプに持って行ったアイテム一覧</h3>
+      <% count = 0 %>
       <% @camp.items.each do |item| %>
+        <% count = count + 1 %>
         <p>
-          <%= link_to "#{item.name}", item_path(item.id) %><br>
+          <%= count %>.<%= link_to "#{item.name}", item_path(item.id) %><br>
           アイテムの値段 ¥<%= item.price %>円
         </p>
       <% end %>
