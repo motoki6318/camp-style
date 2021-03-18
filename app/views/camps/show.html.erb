@@ -1,0 +1,33 @@
+<div class="wrapper">
+  <div class="side-ber">
+    <%= render "camps/side_ber" %>
+  </div>
+  <div class="camp-datas">
+    <div class="camp-data">
+      <h1><%= @camp.title %></h1>
+    </div>
+    <div class="camp-data">
+      <h3>キャンプスタイル</h3>
+      <% @camp.tags.each do |tag| %>
+        /<%= tag.style %>/
+      <% end %>
+    </div>
+    <div class="camp-data">
+      <h3>キャンプに持って行ったアイテム一覧</h3>
+      <% @camp.items.each do |item| %>
+        <p>
+          <%= link_to "#{item.name}", item_path(item.id) %><br>
+          アイテムの値段 ¥<%= item.price %>円
+        </p>
+      <% end %>
+    </div>
+    <div class="camp-data">
+      <h3>キャンプに持って行ったアイテム総額</h3>
+      <% amount = 0 %>
+      <% @camp.items.each do |item| %>
+        <% amount = amount + item.price %>
+      <% end %>
+      アイテムの総額 ¥<%= amount %>円
+    </div>
+  </div>
+</div>

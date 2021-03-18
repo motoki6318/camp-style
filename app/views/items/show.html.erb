@@ -42,6 +42,19 @@
         ¥<%= @item.price %>円
       </div>
     </div>
+
+    <div class="item-data">
+      <div class="data-name">
+        アイテムの使用履歴
+      </div>
+      <div class="data">
+        <% @item.camps.each do |camp| %>
+          <div class="data">
+            <%= link_to "#{camp.title}", camp_path(camp.id) %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 
 </div>
