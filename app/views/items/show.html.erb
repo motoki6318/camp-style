@@ -11,7 +11,7 @@
       <div class="data">
         <%= @item.genre.name %>
       </div>
-      <% if user_signed_in? %>
+      <% if user_signed_in? && current_user.id == @item.user.id %>
         <div class="item-info">
           <%= link_to "#{current_user.nickname}の#{@item.genre.name}一覧", "#" %>
         </div>
