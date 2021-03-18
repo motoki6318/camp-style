@@ -36,7 +36,7 @@
           <p class="camps_list">
             <% tag.camps.each do |camp| %>
               <li class="title">
-                <%= link_to "#{camp.user.nickname}", "#" %> : <%= link_to "#{camp.title}", "#" %>
+                <%= link_to "#{camp.user.nickname}", "#" %> : <%= link_to "#{camp.title}", camp_path(camp.id) %>
               </li>
             <%end%>
           </p>
