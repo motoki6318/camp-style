@@ -4,6 +4,7 @@ class CampTags
   attr_accessor :title, :style, :user_id, :item_ids
 
   with_options presence: true do
+    validates :user_id
     validates :title
     validates :style
     validates :item_ids
