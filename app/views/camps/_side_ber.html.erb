@@ -22,5 +22,12 @@
         <% end %>
       </div>
     </ul>
+    <% if @items.present? %>
+      <% amount = 0 %>
+      <% @items.each do |item| %>
+        <% amount = amount + item.price %>
+      <% end %>
+      <p>総額¥<%= amount %></p>
+    <% end %>
   <% end %>
 </div>

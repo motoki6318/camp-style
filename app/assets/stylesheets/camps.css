@@ -5,7 +5,7 @@
 }
 /* サイドバー */
 .side-ber {
-  width: 250px;
+  width: 350px;
   background-color:#d0a116;
 }
 
@@ -48,7 +48,7 @@
 /* メインコンテンツ */
 .main-content {
   background-color: darkolivegreen;
-  width: calc(100vw - 250px);
+  width: calc(100vw - 350px);
   height: 100vh;
 }
 

@@ -17,3 +17,7 @@
 .data {
   font-size: 18px;
 }
+
+.field_with_errors {
+  display: contents;
+}
