@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :authenticate_user!, except: [:show]
-  before_action :set_item, only: [:new, :show]
+  before_action :set_item, only: [:new, :show, :create]
 
   def new
     @item = Item.new
