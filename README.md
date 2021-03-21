@@ -19,6 +19,9 @@
 | ------------ | ---------- | ------------------------------ |
 | user         | references | null: false, foreign_key: true |
 | title        | string     | null: false                    |
+| place        | string     | null: false                    |
+| text         | text       |                                |
+| the_day      | date       | null: false                    |
 
 ### Associations
 
@@ -56,7 +59,7 @@
 | user     | references | null: false, foreign_key: true |
 | genre_id | integer    | null: false                    |
 | name     | string     | null: false                    |
-| type     | string     | null: false                    |
+| feature  | string     | null: false                    |
 | price    | integer    | null: false                    |
 
 ### Associations
