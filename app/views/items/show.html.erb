@@ -28,6 +28,13 @@
     </div>
 
     <div class="item-data">
+      <% if @item.image.present? %>
+        <h3>キャンプの画像</h3>
+        <%= image_tag @item.image, class: "item-img" %>
+      <% end %>
+    </div>
+
+    <div class="item-data">
       <div class="data-name">
         アイテムの特徴や説明
       </div>

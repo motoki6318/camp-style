@@ -17,6 +17,11 @@
         <%= f.text_field :name, class:"input-title" %>
       </div>
 
+      <div class="camp-field">
+        <%= f.label :image, "アイテム画像" %>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+
       <div class="item-field">
         <%= f.label :feature, "アイテムの特徴や説明" %>
         <%= f.text_field :feature, class:"input-tag" %>
