@@ -5,13 +5,25 @@
   <%= form_with model: @camp, url: camps_path, class:'form-wrap', local: true do |f| %>
     <%= render 'layouts/error_messages', model: f.object %>
     <div class='form'>
-      <div class="title-field">
-        <%= f.label :title,  "キャンプタイトル" %>
-        <%= f.text_area :title, class:"input-title" %>
+      <div class="camp-field">
+        <%= f.label :title, "キャンプタイトル" %>
+        <%= f.text_field :title, class:"input-title", placeholder: '例:年越しソロキャンプ！'%>
       </div>
-      <div class="tag-field", id='tag-field'>
+      <div class="camp-field">
+        <%= f.label :place, "キャンプ地" %>
+        <%= f.text_field :place, class:"input-title", placeholder: '例:ふもとっぱらキャンプ場'%>
+      </div>
+      <div class="camp-field">
         <%= f.label :style, "キャンプスタイル" %>
-        <%= f.text_field :style, class:"input-tag" %>
+        <%= f.text_field :style, class:"input-tag", placeholder: '例:ソロキャンプ 無骨キャンプ  ※複数ならスペースで区切る。'%>
+      </div>
+      <div class="camp-text-field">
+        <%= f.label :text, "キャンプの感想" %>
+        <%= f.text_area :text, class:"input-text", placeholder: '必須ではありません。' %>
+      </div>
+      <div class="camp-text-field">
+        <%= f.label :day, "キャンプの日付" %>
+        <%= f.date_field :day %>
       </div>
 
       <p>使用アイテムを選択 </p>

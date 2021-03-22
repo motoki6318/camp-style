@@ -6,11 +6,22 @@
     <div class="camp-data">
       <h1><%= @camp.title %></h1>
       投稿者 : <%= @camp.user.nickname %>
+      <p>決行日 : <%= @camp.day %></p>
+    </div>
+    <div class="camp-data">
+      <h3>キャンプ地</h3>
+      <%= @camp.place %>
     </div>
     <div class="camp-data">
       <h3>キャンプスタイル</h3>
       <% @camp.tags.each do |tag| %>
         /<%= tag.style %>/
+      <% end %>
+    </div>
+    <div class="camp-data">
+      <% if @camp.text.present? %>
+        <h3>キャンプの感想</h3>
+        <%= @camp.text %>
       <% end %>
     </div>
     <div class="camp-data">

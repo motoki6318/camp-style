@@ -15,11 +15,22 @@
   flex-direction: column;
 }
 
-.title-field {
+.camp-field {
   width: 100%;
   display: flex;
   flex-direction: column;
   margin-top: 10px;
+}
+
+.camp-text-field {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.camp-day-field {
+  margin: 15px;
 }
 
 .item-field {
@@ -47,9 +58,7 @@
   margin-bottom: 20px;
 }
 
-.input-message {
-  font-size: 20px;
-}
+
 
 .submit-btn {
   padding: 10px;
