@@ -1,6 +1,9 @@
 class CampsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_item, only: [:index, :new, :show, :create]
+  before_action :set_items, only: [:index, :new, :show, :create, :edit, :update]
+  before_action :set_item, only: [:show, :edit, :update]
+  before_action :move_to_index, only: [:edit, :update]
+
   def index
     @tags = Tag.all
   end
@@ -22,7 +25,17 @@ class CampsController < ApplicationController
   end
 
   def show
-    @camp = Camp.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @camp.update(params_edit)
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   private
@@ -31,11 +44,23 @@ class CampsController < ApplicationController
     params.require(:camp_tags).permit(:title, :image, :place, :style, :text, :day, item_ids: []).merge(user_id: current_user.id)
   end
 
-  def set_item
+  def params_edit
+    params.require(:camp).permit(:title, :image, :place, :text, :day, item_ids: []).merge(user_id: current_user.id)
+  end
+
+  def set_items
     if user_signed_in?
       user = User.find(current_user.id)
       @items = user.items
     end
+  end
+
+  def set_item
+    @camp = Camp.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to root_path unless current_user.id == @camp.user_id
   end
 
   def save_items
