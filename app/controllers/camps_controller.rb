@@ -11,7 +11,6 @@ class CampsController < ApplicationController
 
   def create
     @camp = CampTags.new(camp_params)
-
     if @camp.valid?
       @tag_list = camp_params[:style].split(/[[:blank:]]+/).select(&:present?)
       @camp.save(@tag_list)
@@ -34,7 +33,7 @@ class CampsController < ApplicationController
   private
 
   def camp_params
-    params.require(:camp_tags).permit(:title, :style, item_ids: []).merge(user_id: current_user.id)
+    params.require(:camp_tags).permit(:title, :place, :style, :text, :day, item_ids: []).merge(user_id: current_user.id)
   end
 
   def set_item
