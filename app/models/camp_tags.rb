@@ -1,7 +1,7 @@
 class CampTags
 
   include ActiveModel::Model
-  attr_accessor :title, :place, :style, :text, :day, :user_id, :item_ids
+  attr_accessor :title, :image, :place, :style, :text, :day, :user_id, :item_ids
 
   with_options presence: true do
     validates :user_id
@@ -13,7 +13,7 @@ class CampTags
   end
 
   def save(tag_list)
-    @camp = Camp.create(user_id: user_id, title: title, place: place, text: text, day: day)
+    @camp = Camp.create(user_id: user_id, title: title, image: image, place: place, text: text, day: day)
     tag_list.each do |tag|
       unless Tag.find_by(style: tag)
         @tag = Tag.create(style: tag)

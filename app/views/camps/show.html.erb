@@ -9,6 +9,12 @@
       <p>決行日 : <%= @camp.day %></p>
     </div>
     <div class="camp-data">
+      <% if @camp.image.present? %>
+        <h3>キャンプの画像</h3>
+        <%= image_tag @camp.image, class: "item-img" %>
+      <% end %>
+    </div>
+    <div class="camp-data">
       <h3>キャンプ地</h3>
       <%= @camp.place %>
     </div>
