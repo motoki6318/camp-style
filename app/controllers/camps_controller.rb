@@ -14,12 +14,7 @@ class CampsController < ApplicationController
     if @camp.valid?
       @tag_list = camp_params[:style].split(/[[:blank:]]+/).select(&:present?)
       @camp.save(@tag_list)
-      camp = Camp.order(updated_at: :desc).limit(1)
-      @camp_id = camp.ids
-      @item_ids = @camp.item_ids
-      @item_ids.each do |item_id|
-        CampItemRelation.create(camp_id: @camp_id[0], item_id: item_id)
-      end
+      save_items
       return redirect_to root_path
     else
       render "new"
@@ -40,6 +35,15 @@ class CampsController < ApplicationController
     if user_signed_in?
       user = User.find(current_user.id)
       @items = user.items
+    end
+  end
+
+  def save_items
+    camp = Camp.order(updated_at: :desc).limit(1)
+    @camp_id = camp.ids
+    @item_ids = @camp.item_ids
+    @item_ids.each do |item_id|
+      CampItemRelation.create(camp_id: @camp_id[0], item_id: item_id)
     end
   end
 
