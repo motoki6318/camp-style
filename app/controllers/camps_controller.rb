@@ -28,7 +28,7 @@ class CampsController < ApplicationController
   private
 
   def camp_params
-    params.require(:camp_tags).permit(:title, :place, :style, :text, :day, item_ids: []).merge(user_id: current_user.id)
+    params.require(:camp_tags).permit(:title, :image, :place, :style, :text, :day, item_ids: []).merge(user_id: current_user.id)
   end
 
   def set_item

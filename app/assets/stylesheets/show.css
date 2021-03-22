@@ -4,3 +4,8 @@
   overflow: scroll;
   padding: 30px;
 }
+
+.item-img {
+  width: 50%;
+  height: 50%;
+}

@@ -10,6 +10,10 @@
         <%= f.text_field :title, class:"input-title", placeholder: '例:年越しソロキャンプ！'%>
       </div>
       <div class="camp-field">
+        <%= f.label :image, "キャンプ画像" %>
+        <%= f.file_field :image, id:"item-image" %>
+      </div>
+      <div class="camp-field">
         <%= f.label :place, "キャンプ地" %>
         <%= f.text_field :place, class:"input-title", placeholder: '例:ふもとっぱらキャンプ場'%>
       </div>
