@@ -38,6 +38,12 @@
 - アイテム名をクリックするとアイテム詳細ページに遷移します。
 - アイテム詳細のアイテムの使用履歴には持っていったキャンプのタイトルが表示されています。
 
+
+# 今後追加したい機能
+- ユーザーのマイページを作ってユーザーの投稿したキャンプ記録を一覧表できる機能があると自分がどのような投稿をしたのかを容易に把握できると思いました。
+- ユーザー同士のコミュニケーションを図るためにコメント機能をキャンプ詳細ページに実装したいと思いました。
+- 投稿件数によってユーザー名の表示が変わるようにしても面白いと思いました。（ユーザーがベテランキャンパーを一目で判断がつく）
+
 # テーブルの設計
 
 ## users テーブル
@@ -61,13 +67,14 @@
 | title        | string     | null: false                    |
 | place        | string     | null: false                    |
 | text         | text       |                                |
-| the_day      | date       | null: false                    |
+| day          | date       | null: false                    |
 
 ### Associations
 
 - belongs_to :user
 - nas_many :tags, through: camp_tag_relations
 - has_many :items, through: camp_item_relations
+- has_one_attached :image
 
 ## tags テーブル
 
@@ -106,6 +113,7 @@
 
 - belongs_to :user
 - has_many :camps, through: camp_item_relations
+- has_one_attached :image
 
 ## camp_item_relations テーブル
 
