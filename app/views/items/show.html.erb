@@ -57,10 +57,14 @@
         アイテムの使用履歴
       </div>
       <div class="data">
-        <% @item.camps.each do |camp| %>
-          <div class="data">
-            <%= link_to "#{camp.title}", camp_path(camp.id) %>
-          </div>
+        <% if @item.camps.present? %>
+          <% @item.camps.each do |camp| %>
+            <div class="data">
+              <%= link_to "#{camp.title}", camp_path(camp.id) %>
+            </div>
+          <% end %>
+        <% else %>
+          現在使用履歴はありません。
         <% end %>
       </div>
     </div>
