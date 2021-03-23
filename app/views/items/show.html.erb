@@ -68,8 +68,10 @@
         <% end %>
       </div>
     </div>
-    <% if current_user.id == @item.user.id %>
-      <%= link_to "#{@item.name}情報の編集をする", edit_item_path(@item.id) %>
+    <% if user_signed_in? %>
+      <% if current_user.id == @item.user.id %>
+        <%= link_to "#{@item.name}情報の編集をする", edit_item_path(@item.id) %>
+      <% end %>
     <% end %>
   </div>
 
