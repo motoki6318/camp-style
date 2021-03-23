@@ -29,7 +29,7 @@
 
     <div class="item-data">
       <% if @item.image.present? %>
-        <h3>キャンプの画像</h3>
+        <h3>アイテムの画像</h3>
         <%= image_tag @item.image, class: "item-img" %>
       <% end %>
     </div>
@@ -57,13 +57,20 @@
         アイテムの使用履歴
       </div>
       <div class="data">
-        <% @item.camps.each do |camp| %>
-          <div class="data">
-            <%= link_to "#{camp.title}", camp_path(camp.id) %>
-          </div>
+        <% if @item.camps.present? %>
+          <% @item.camps.each do |camp| %>
+            <div class="data">
+              <%= link_to "#{camp.title}", camp_path(camp.id) %>
+            </div>
+          <% end %>
+        <% else %>
+          現在使用履歴はありません。
         <% end %>
       </div>
     </div>
+    <% if current_user.id == @item.user.id %>
+      <%= link_to "#{@item.name}情報の編集をする", edit_item_path(@item.id) %>
+    <% end %>
   </div>
 
 </div>

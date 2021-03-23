@@ -2,8 +2,8 @@
   <div class="side-ber">
     <%= render "side_ber" %>
   </div>
-  <%= form_with model: @camp, url: camps_path, class:'form-wrap', local: true do |f| %>
-    <h1>新しいキャンプを記録する</h1>
+  <%= form_with model: @camp, class:'form-wrap', local: true do |f| %>
+    <h1>キャンプ記録の編集</h1>
     <%= render 'layouts/error_messages', model: f.object %>
     <div class='form'>
       <div class="camp-field">
@@ -18,26 +18,16 @@
         <%= f.label :place, "キャンプ地" %>
         <%= f.text_field :place, class:"input-title", placeholder: '例:ふもとっぱらキャンプ場'%>
       </div>
-      <div class="camp-field">
-        <%= f.label :style, "キャンプスタイル" %>
-        <%= f.text_field :style, class:"input-tag", placeholder: '例:ソロキャンプ 無骨キャンプ  ※複数ならスペースで区切る。'%>
-      </div>
+
       <div class="camp-text-field">
         <%= f.label :text, "キャンプの感想" %>
         <%= f.text_area :text, class:"input-text", placeholder: '必須ではありません。' %>
       </div>
+
       <div class="camp-text-field">
         <%= f.label :day, "キャンプの日付" %>
         <%= f.date_field :day %>
       </div>
-
-      <p>使用アイテムを選択 </p>
-      <select name="camp_tags[item_ids][]" multiple>
-        <% @items.each do |item| %>
-          <option value=<%= item.id %>><%= item.name %></option>
-        <% end %>
-      </select>
-
 
     </div>
     <div class="submit-post">

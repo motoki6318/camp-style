@@ -49,5 +49,8 @@
       <% end %>
       アイテムの総額 ¥<%= amount %>円
     </div>
+    <% if current_user.id == @camp.user.id %>
+      <%= link_to "キャンプ記録を編集する", edit_camp_path(@camp.id) %>
+    <% end %>
   </div>
 </div>
