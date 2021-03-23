@@ -21,7 +21,11 @@
 最初の画面
 ![画像](https://raw.githubusercontent.com/motoki6318/camp-style/master/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-03-23%2017.40.27.png)
 
+アイテムの登録の様子
+![demo](https://user-images.githubusercontent.com/78415358/112128588-e9339c00-8c09-11eb-99d3-9926502fd157.gif)
 
+- アイテムの総額の計算が自動で行われています。
+- アイテム情報には、種類、名前、画像、説明文、値段の情報を登録します。
 
 # テーブルの設計
 
