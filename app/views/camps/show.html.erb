@@ -37,7 +37,11 @@
         <% count = count + 1 %>
         <p>
           <%= count %>.<%= link_to "#{item.name}", item_path(item.id) %><br>
-          アイテムの値段 ¥<%= item.price %>円
+          <% if item.price >= 40000 %>
+            アイテムの値段 ¥<%= item.price %>円 (高額アイテム)
+          <% else %>
+            アイテムの値段 ¥<%= item.price %>円
+          <% end %>
         </p>
       <% end %>
     </div>
@@ -47,7 +51,11 @@
       <% @camp.items.each do |item| %>
         <% amount = amount + item.price %>
       <% end %>
-      アイテムの総額 ¥<%= amount %>円
+      <% if amount >= 200000 %>
+        アイテムの総額 ¥<%= amount %>円 (高額)
+      <% else %>
+        アイテムの総額 ¥<%= amount %>円
+      <% end %>
     </div>
     <% if user_signed_in? %>
       <% if current_user.id == @camp.user.id %>
