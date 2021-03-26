@@ -84,7 +84,38 @@
 .camps {
   background-color: darkolivegreen;
   height: calc(100vh - 100px);
-  padding: 40px 40px;
+  overflow:scroll;
+}
+
+.image-text {
+  color:white;
+}
+
+.image-text-a {
+  color:white;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.camps-wrap {
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.camp_style {
+  width: 48%;
+  height: 250px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid;
+  border-radius: 10px;
+  background-color: rgb(214, 140, 29);
+}
+
+.camp_title {
+  width: 100%;
   overflow:scroll;
 }
 

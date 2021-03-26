@@ -26,12 +26,24 @@
 </div>
 
 <div class="camps">
+  <div class="main-top">
+    <h1 class="image-text">
+      campに出かけよう
+    </h1>
+    <p class="image-text-a">
+      自然が好きだ！
+    </p>
+    <p class="image-text-a">
+      キャンプが好きだ！
+    </p>
+  </div>
   <div class="camps-wrap">
     <% @tags.each do |tag|%>
+      <% camp_count = tag.camps.length %>
       <div class="camp_style">
-        <h1 class="style">
-          <%= tag.style %>
-        </h1>
+        <h2 class="style">
+          <%= tag.style %>(<%= camp_count %>)
+        </h2>
         <ul class="camp_title">
           <p class="camps_list">
             <% tag.camps.each do |camp| %>
