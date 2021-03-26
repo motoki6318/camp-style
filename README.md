@@ -31,7 +31,7 @@
 - テストアカウント password: asdf123
 
 ### 最初の画面
-![画像](https://raw.githubusercontent.com/motoki6318/camp-style/master/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-03-23%2017.40.27.png)
+![画像](https://user-images.githubusercontent.com/78415358/112568042-36d82080-8e25-11eb-8f98-9a113bd89a2e.png)
 
 ### アイテムの登録の様子
 ![demo](https://user-images.githubusercontent.com/78415358/112128588-e9339c00-8c09-11eb-99d3-9926502fd157.gif)
@@ -41,7 +41,7 @@
 - アイテムの使用履歴が存在しない時は、現在使用履歴はありません。と表示されます。
 
 ### キャンプ記録登録の様子
-![camp](https://user-images.githubusercontent.com/78415358/112131506-f7cf8280-8c0c-11eb-93b4-a52110e5c2f3.gif)
+![camp](https://user-images.githubusercontent.com/78415358/112569855-4a38bb00-8e28-11eb-8b92-3889e502e4ed.gif)
 
 - キャンプ記録登録には、タイトル、画像、場所、キャンプスタイル、感想、日付、使用アイテムを登録します。
 - キャンプ記録登録後、キャンプ一覧ページにはキャンプスタイルとキャンプスタイルに属しているキャンプ記録が表示されています。
