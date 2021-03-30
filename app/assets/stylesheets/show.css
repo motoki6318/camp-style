@@ -18,8 +18,7 @@
   border: 1px solid;
   border-radius: 10px;
   text-align: center;
-  height: 400px;
-  overflow: scroll;
+  height: 500px;
 }
 
 .comment-btn {
@@ -38,4 +37,13 @@
   width: 90%;
   height: 40px;
   padding: 10px;
+}
+
+.comments {
+  height: 320px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid;
+  overflow: scroll;
+  text-align: left;
 }

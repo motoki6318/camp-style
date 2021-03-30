@@ -26,7 +26,7 @@ class CampsController < ApplicationController
 
   def show
     @comment = Comment.new
-    
+    @comments = @camp.comments.includes(:user)
   end
 
   def edit
