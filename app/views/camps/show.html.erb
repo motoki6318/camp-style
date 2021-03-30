@@ -62,5 +62,22 @@
         <%= link_to "キャンプ記録を編集する", edit_camp_path(@camp.id) %>
       <% end %>
     <% end %>
+
+    <div class="comments-box">
+      <% if user_signed_in? %>
+        <%= form_with(model:[@camp, @comment]) do |f| %>
+          <p><%= f.text_field :message, class:"comment-text" %></p>
+          <p><%= f.submit "コメントする", type:"submit", class:"comment-btn", id:"btn" %></p>
+        <% end %>
+      <% end %>
+      <div class="comments" id='comments'>
+        <% @comments.reverse_each do |comment| %>
+          <div class="comment">
+            <%= comment.user.nickname %>: <%= comment.message %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 </div>

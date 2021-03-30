@@ -9,3 +9,41 @@
   width: 50%;
   height: 50%;
 }
+
+.comments-box {
+  width: 50%;
+  background-color:grey;
+  padding: 10px;
+  margin-top: 20px;
+  border: 1px solid;
+  border-radius: 10px;
+  text-align: center;
+  height: 500px;
+}
+
+.comment-btn {
+  line-height: 48px;
+  background-color:darkgoldenrod ;
+  border: 1px solid darkgoldenrod;
+  color: #fff;
+  width: 50%;
+  min-width: 150px;
+  font-size: 18px;
+  border-radius: 100px;
+  margin-bottom: 2vh;
+}
+
+.comment-text {
+  width: 90%;
+  height: 40px;
+  padding: 10px;
+}
+
+.comments {
+  height: 320px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid;
+  overflow: scroll;
+  text-align: left;
+}
