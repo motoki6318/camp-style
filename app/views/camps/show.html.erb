@@ -62,5 +62,13 @@
         <%= link_to "キャンプ記録を編集する", edit_camp_path(@camp.id) %>
       <% end %>
     <% end %>
+
+    <div class="comments-box">
+      <%= form_with(model:[@camp, @comment]) do |f| %>
+        <p><%= f.text_field :comment_text, class:"comment-text" %></p>
+        <p><%= f.submit "コメントする", type:"submit", class:"comment-btn", id:"btn" %></p>
+      <% end %>
+    </div>
+
   </div>
 </div>
