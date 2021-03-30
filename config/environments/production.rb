@@ -1,4 +1,7 @@
 Rails.application.configure do
+  ActionCable.server.config.disable_request_forgery_protection = true
+  config.action_cable.url = "wss://camp-style.herokuapp.com/cable" 
+  config.action_cable.allowed_request_origins = ['https://camp-style.herokuapp.com', 'http://camp-style.herokuapp.com']
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
