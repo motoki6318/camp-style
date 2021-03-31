@@ -89,6 +89,7 @@ Ruby / Ruby on Rails / MySQL / GitHub / Heroku / Visual Studio Code
 
 - has_many :camps
 - has_many :items
+- has_many :comments
 
 ## camps テーブル
 
@@ -106,6 +107,7 @@ Ruby / Ruby on Rails / MySQL / GitHub / Heroku / Visual Studio Code
 - nas_many :tags, through: camp_tag_relations
 - has_many :items, through: camp_item_relations
 - has_one_attached :image
+- has_many :comments
 
 ## comments テーブル
 
@@ -114,6 +116,11 @@ Ruby / Ruby on Rails / MySQL / GitHub / Heroku / Visual Studio Code
 | user     | references | null: false, foreign_key: true |
 | camp     | references | null: false, foreign_key: true |
 | massage  | text       | null: false,                   |
+
+### Associations
+
+- belongs_to :user
+- belongs_to :camp
 
 ## tags テーブル
 
